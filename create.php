@@ -1,6 +1,7 @@
 <?php
 require 'koneksi.php';
 
+
 if(isset($_POST["submit"]) ){
     if(tambah($_POST) > 0){
         echo "<script>
@@ -26,7 +27,7 @@ if(isset($_POST["submit"]) ){
 </head>
 <body>
     <!-- harus sesuai nama di database atau fill -->
-    <form action="prosestambah.php" method="post">
+    <form action="prosestambah.php" enctype="multipart/form-data" method="post">
         <table>
             <tr>
                 <td>nama</td>
@@ -39,11 +40,11 @@ if(isset($_POST["submit"]) ){
             <tr>
                 <td>gambar</td>
                 <td>
-                    <input type="file" name="img" id="">
+                    <input type="file" name="gambar" id="">
                 </td>
             </tr>
             <tr>
-                <td><input type="submit" name="tambah" id="Tambah Data"></td>
+                <td><input type="submit" name="tambah" id="Tambah"></td>
             </tr>
         </table>
     </form>

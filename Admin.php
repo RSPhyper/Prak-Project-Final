@@ -66,7 +66,7 @@
                 <td><?= $data['nama'];?></td>
                 <td><?= $data['deskripsi'];?></td>
                 <td>
-                  <img src="<?= $data['img'];?>" alt="" class="img-fluid" width="100px" height="100px">
+                  <img src="img/<?= $data['img'];?>" alt="" class="img-fluid" width="100px" height="100px">
                 </td>
                 <td>
                     <a href="update.php?id=<?= $data['id']?>"><button type="button" class="btn btn-success">Update</button></a>

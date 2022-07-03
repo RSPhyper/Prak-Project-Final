@@ -8,7 +8,7 @@
     <?php
     include "koneksi.php";
     $id = $_GET['id'];
-    $sql = mysqli_query($comm,"SELECT * FROM prakfinal 
+    $sql = mysqli_query($conn,"SELECT * FROM prakfinal 
     WHERE id = '$id'");
     foreach ($sql as $data => $key) : ?>
 

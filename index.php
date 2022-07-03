@@ -79,45 +79,64 @@
   <div class="container marketing">
 
 <!-- Three columns of text below the carousel -->
-    <?php
-    $sql = mysqli_query($conn, "SELECT * FROM prakfinal ORDER BY id");
-    while($data = mysqli_fetch_array($sql)){
-  ?>
     <div class="row">
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" src="<?php echo $data['img']; ?>" alt="" width="140" height="140" >
-        <h2 class="fw-normal"><?php echo $data['nama']; ?></h2>
-        <p><?php echo $data['deskripsi']; ?></p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <?php   
-      }
-    ?>
+      <?php
+        $sql = mysqli_query($conn, "SELECT * FROM prakfinal ORDER BY id");
+        while($data = mysqli_fetch_array($sql)){
+      ?>
+      
+        <div class="col-lg-3">
+          <img class="bd-placeholder-img rounded-circle" src="img/<?php echo $data['img']; ?>" alt="" width="140" height="140" >
+          <h2 class="fw-normal"><?php echo $data['nama']; ?></h2>
+          <p><?php echo $data['deskripsi']; ?></p>
+          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        </div>
+        <?php
+        }
+      ?>
     </div>
-    </div>
-    
-
+  </div>
 <!-- end heading -->
 
 <!-- FEATURETTES -->
-<?php
+<div class="container">
+  <?php
+    
     $sql = mysqli_query($conn, "SELECT * FROM prakfinal ORDER BY id");
+    $i=1;
     while($data = mysqli_fetch_array($sql)){
-  ?>
-    <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1"><?php echo $data['nama']; ?></h2>
+  ?>
+  <hr class="featurette-divider">
+<?php
+
+    if($i%2 == 0){?>
+        <div class="row featurette">
+        <div class="col-md-7 ">
+        <h2 class="featurette-heading fw-normal lh-1">  <?php echo $data['nama']; ?></h2>
         <p class="lead"><?php echo $data['deskripsi']; ?></p>
       </div>
-      <div class="col-md-5">
-        <img src="<?php echo $data['img']; ?>" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
+      <div class="col-md-5 ">
+        <img src="img/<?= $data['img'];?>" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
       </div>
-    </div>
+      </div>
+    <?php }else{ ?>
+            <div class="row featurette">
+              <div class="col-md-5 ">
+                <img src="img/<?= $data['img'];?>" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
+              </div>
+              <div class="col-md-7 ">
+                <h2 class="featurette-heading fw-normal lh-1">  <?php echo $data['nama']; ?></h2>
+                <p class="lead"><?php echo $data['deskripsi']; ?></p>
+              </div>
+            </div>
+    <?php } ?>  
     <?php   
-      }
+    $i++;}
     ?>
+
+</div>
+
 
 <!-- END FEATURETTES -->
 
