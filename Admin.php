@@ -1,6 +1,11 @@
-<!-- <?php
-    include 'koneksi.php';
-?> -->
+<?php
+  session_start();
+  include 'koneksi.php';
+  // if( !isset($_SESSION["admin"]) ){
+  //   header("Location: login.php");
+  //   exit;
+  // }
+// ?>
 
 <!-- tips
     alt atas bawah untuk pindahkan baris sintaks atas ke bawah
@@ -84,7 +89,7 @@
 
         <br>
 
-        <a href="index.php"><button type="button" class="btn btn-primary">Kembali Ke Halaman Utama</button></a>
+        <a href="logOut.php"><button type="button" class="btn btn-primary">Kembali Ke Halaman Utama</button></a>
     </div>
 
 <!-- end content -->

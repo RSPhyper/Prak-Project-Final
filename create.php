@@ -1,6 +1,10 @@
 <?php
 require 'koneksi.php';
+// session_start();
 
+// if(!isset($_SESSION['admin'])){
+// header("Location: login.php");
+// }
 
 if(isset($_POST["submit"]) ){
     if(tambah($_POST) > 0){
